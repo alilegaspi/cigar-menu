@@ -129,8 +129,8 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 10,
     name: 'ALEC BRADLEY SUPERSTITION',
-    image: '/images/ALEC BRADLEY SUPERSTITION.png',
-    detailsImage: '/images/ALEC BRADLEY SUPERSTITION details.png',
+    image: '/images/ALEC BRADLEY SUPERSTITION.jpg',
+    detailsImage: '/images/ALEC BRADLEY SUPERSTITION.jpg',
     price: '₱1,400.00',
     origin: 'Dominican Republic',
     profile: 'Medium - Full',
