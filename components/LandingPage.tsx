@@ -5,16 +5,12 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
-  const imageUrl = window.location.hostname === "localhost" 
-    ? "/images/landing page.jpg"
-    : "/cigar-menu/images/landing page.jpg";
-
   return (
     <div className="relative flex flex-col items-center justify-end h-screen bg-black p-4 pb-20 md:pb-24 overflow-hidden">
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${imageUrl})`,
+          backgroundImage: `url(/cigar-menu/images/landing page.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
