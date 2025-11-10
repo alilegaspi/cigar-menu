@@ -265,5 +265,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Dominican',
     filler: 'Dominican',
     description: 'The Caldwell The King is Dead Premier is a distinguished premium cigar, expertly handcrafted in the Dominican Republic. Showcasing a rare Negrito wrapper, this blend is paired with a Dominican Corona binder and meticulously aged long-fillers for a complex, well-balanced experience. Upon lighting, the cigar opens with smooth notes of milk chocolate, gradually deepening into rich flavors of coffee and spice. As the profile develops, layers of cedar, earth, and subtle sweetness emerge, offering a dynamic and satisfying smoke. With a consistent nutty sweetness and an even, dependable burn, this cigar exemplifies both indulgence and craftsmanship.',
+  },
+  {
+    id: 20,
+    name: 'AVO SYNCRO RITMO TORO',
+    image: '/images/AVO SYNCRO RITMO TORO.jpg',
+    detailsImage: '/images/AVO SYNCRO RITMO TORO.jpg',
+    price: '₱2,300.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium - Full',
+    vitola: '6x54 Toro',
+    wrapper: 'Ecuador Connecticut',
+    binder: 'Mexico',
+    filler: 'Brazil, Honduras, Nicaragua, Peru',
+    description: 'Experience the exceptional Avo Syncro Ritmo, a masterpiece that showcases the perfect harmony of premium tobaccos from seven different countries. This remarkable handmade creation is elegantly wrapped in a silky Ecuadorian wrapper, demonstrating Avo\'s unparalleled blending expertise. Your journey begins with an exciting burst of bold pepper that awakens your senses, seamlessly transitioning to a perfectly balanced symphony of roasted nuts, rich cocoa, and robust black coffee notes. With each draw, you\'ll savor the creamy, sweet finish that makes this extraordinary cigar an absolute pleasure from first light to final puff. Treat yourself to the Avo Syncro Ritmo – a truly satisfying indulgence that cigar connoisseurs can\'t resist.',
   }
 ];
