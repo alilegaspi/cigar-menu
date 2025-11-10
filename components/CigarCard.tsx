@@ -1,6 +1,33 @@
 ﻿import React from 'react';
 import { Cigar } from '../types';
 
+// Reuse flag emoji mapping (duplicated from modal; consider refactor later)
+const getFlagEmoji = (origin: string): string => {
+  const key = origin.trim().toLowerCase();
+  const map: Record<string, string> = {
+    'cuba': '🇨🇺',
+    'dominican republic': '🇩🇴',
+    'dominican  republic': '🇩🇴',
+    'nicaragua': '🇳🇮',
+    'honduras': '🇭🇳',
+    'philippines': '🇵🇭',
+    'the philippines': '🇵🇭',
+    'indonesia': '🇮🇩',
+    'ecuador': '🇪🇨',
+    'mexico': '🇲🇽',
+    'brazil': '🇧🇷',
+    'spain': '🇪🇸',
+    'italy': '🇮🇹',
+    'switzerland': '🇨🇭',
+    'united states': '🇺🇸',
+    'u.s.a.': '🇺🇸',
+    'usa': '🇺🇸',
+  };
+  if (map[key]) return map[key];
+  const found = Object.keys(map).find(k => key.includes(k));
+  return found ? map[found] : '🌍';
+};
+
 interface CigarCardProps {
   cigar: Cigar;
   onSelect: () => void;
@@ -31,7 +58,11 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
         <h3 className="font-serif text-2xl font-bold text-amber-100 truncate group-hover:text-amber-300 transition-colors">
           {cigar.name}
         </h3>
-        <p className="text-gray-400 mt-1">{cigar.origin}</p>
+        <p className="text-gray-400 mt-1 flex items-center gap-2">
+          <span>{cigar.origin}</span>
+          <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+          <span className="sr-only">{`${cigar.origin} flag`}</span>
+        </p>
         <p className="text-gray-300 text-sm mt-2 line-clamp-2">
           {cigar.profile} • {cigar.vitola} • {cigar.wrapper}
         </p>
