@@ -419,5 +419,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'N/A',
     filler: 'N/A',
     description: 'Warm, aromatic, and full of character, Flor de Filipinas Spice Rum Panetela brings a spirited twist to the traditional cigar. Infused with notes of clove and molasses, this 5 × 35 Panetela delivers the richness of rum in a mellow, satisfying format. Perfect for nightcaps and social indulgence.',
+  },
+  {
+    id: 31,
+    name: 'FLAVORED PANETELAS VANILLA',
+    image: '/images/FLAVORED PANETELAS VANILLA.jpg',
+    detailsImage: '/images/FLAVORED PANETELAS VANILLA.jpg',
+    price: '₱300.00',
+    origin: 'Philippines',
+    profile: 'Mild',
+    vitola: '5x35 Panetela',
+    wrapper: 'N/A',
+    binder: 'N/A',
+    filler: 'N/A',
+    description: 'Aromatic, flavorful, and delightfully smooth, Flor de Filipinas Flavored Cigars are infused with rich tastes that awaken the senses and charm the palate. Offered in delicious varieties like Chocolate, Honey, Cherry, Rum, and the bestselling Vanilla, these cigars are the perfect companion to your favorite after-dinner drink or a relaxed gathering with friends. The 5x35 Vanilla Panetela delivers a light, creamy smoke with a sweet vanilla crème finish. Whether you\'re new to cigars or simply craving a dessert-like indulgence, this petite cigar is a satisfying, aromatic treat.',
   }
 ];
