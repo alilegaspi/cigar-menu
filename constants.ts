@@ -363,5 +363,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaragua',
     filler: 'Nicaragua',
     description: 'Since 1968, Joya de Nicaragua has been known for producing full-bodied, powerful cigars. However, with their Cabinetta line, they have crafted a markedly different experience - one that is creamy and mild. Cabinetta cigars feature a dark, coffee-hued Nicaraguan Criollo wrapper, blended with a creamy, light Ecuadorian Shade wrapper. This unique combination lends a complex array of flavors and aromas. In contrast to other Joya cigars, the medium-bodied Cabinetta is less demanding on the palate. Carefully selected Nicaraguan long-fillers deliver a solid, smooth smoking experience that is worthy of praise.',
+  },
+  {
+    id: 27,
+    name: 'FLAVORED PANETELAS CHERRY',
+    image: '/images/FLAVORED PANETELAS CHERRY.jpg',
+    detailsImage: '/images/FLAVORED PANETELAS CHERRY.jpg',
+    price: '₱300.00',
+    origin: 'Philippines',
+    profile: 'Mild',
+    vitola: '5x35 Panetela',
+    wrapper: 'N/A',
+    binder: 'N/A',
+    filler: 'N/A',
+    description: 'Fragrant, fruity, and pleasantly smooth, Flor de Filipinas Cherry Panetela is a vibrant choice for those who enjoy a sweeter, more playful smoking experience. It\'s a flavorful companion to breezy afternoons or relaxed hangouts.',
   }
 ];
