@@ -405,5 +405,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'N/A',
     filler: 'N/A',
     description: 'Delicately sweet and incredibly smooth, Flor de Filipinas Honey Panetela offers a gentle, golden flavor profile that\'s easy to love. Mellow with a golden nectar finish, the Honey Panetela offers a smooth draw and subtle sweetness. Easy to love and hard to put down, it\'s a gentle aromatic smoke ideal for laid-back afternoons or pairing with tea and light spirits.',
+  },
+  {
+    id: 30,
+    name: 'FLAVORED PANETELAS SPICE RUM',
+    image: '/images/FLAVORED PANETELAS SPICE RUM.jpg',
+    detailsImage: '/images/FLAVORED PANETELAS SPICE RUM.jpg',
+    price: '₱300.00',
+    origin: 'Philippines',
+    profile: 'Mild',
+    vitola: '5x35 Panetela',
+    wrapper: 'N/A',
+    binder: 'N/A',
+    filler: 'N/A',
+    description: 'Warm, aromatic, and full of character, Flor de Filipinas Spice Rum Panetela brings a spirited twist to the traditional cigar. Infused with notes of clove and molasses, this 5 × 35 Panetela delivers the richness of rum in a mellow, satisfying format. Perfect for nightcaps and social indulgence.',
   }
 ];
