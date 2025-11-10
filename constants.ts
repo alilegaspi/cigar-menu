@@ -223,5 +223,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaraguan',
     filler: 'Dominican Republic / Nicaraguan',
     description: 'Gatekeeper is the second line introduced by Rubin\'s sons, building on a legacy of craftsmanship and expertise. Encased in a rich Ecuadorian Habano wrapper, this cigar is complemented by a Nicaraguan binder and fillers sourced from both the Dominican Republic and Nicaragua. Its smooth, full-bodied profile offers a complex array of flavors, with prominent notes of cedar, nuts, and leather. The construction reflects the high standards of the renowned factory behind such iconic cigars as the Prensado. Gatekeeper is not just a cigar; it represents the passing of knowledge and skill from one generation to the next, a tribute to a great man\'s enduring influence.',
+  },
+  {
+    id: 17,
+    name: 'AVO XO INTERMEZZO ROBUSTO',
+    image: '/images/AVO XO INTERMEZZO ROBUSTO.jpg',
+    detailsImage: '/images/AVO XO INTERMEZZO ROBUSTO.jpg',
+    price: '₱2,000.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium',
+    vitola: '5x50 Robusto',
+    wrapper: 'Ecuador Connecticut',
+    binder: 'Dominican Republic',
+    filler: 'Dominican Republic',
+    description: 'AVO XO embodies the pinnacle of craftsmanship from the renowned AVO brand, showcasing tobaccos that have been meticulously aged for a minimum of six years to achieve exceptional quality. Dominican binders and long-fillers are elegantly wrapped in a luxurious Ecuadorian Connecticut leaf, prized for its smooth, golden appearance and sophisticated presentation. The smoking experience unfolds with an intricate blend of flavors—cedar, salted cashews, sweet molasses, charred wood, earth, leather, and delicate spices—each note seamlessly complementing the next, creating a truly remarkable sensory journey. The AVO XO Intermezzo offers both seasoned connoisseurs and newcomers a refined, balanced, and exceptionally smooth experience, exemplifying the finest in premium cigar craftsmanship.',
   }
 ];
