@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Cigar } from '../types';
 
 interface CigarCardProps {
@@ -23,7 +23,7 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
         <img
           src={`${import.meta.env.BASE_URL}images/RWG.png`}
           alt="Ruby Wong's Godown Logo"
-          className="absolute top-4 right-4 w-14 h-14 object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+          className="absolute top-4 left-4 w-14 h-14 object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           aria-hidden="true"
         />
       </div>
