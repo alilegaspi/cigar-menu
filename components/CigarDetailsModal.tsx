@@ -15,6 +15,34 @@ const DetailItem: React.FC<{ label: string; value: string }> = ({ label, value }
   </div>
 );
 
+// Map common origin names to flag emojis. Fallback to globe if unknown.
+const getFlagEmoji = (origin: string): string => {
+  const key = origin.trim().toLowerCase();
+  const map: Record<string, string> = {
+    'cuba': '🇨🇺',
+    'dominican republic': '🇩🇴',
+    'dominican  republic': '🇩🇴',
+    'nicaragua': '🇳🇮',
+    'honduras': '🇭🇳',
+    'philippines': '🇵🇭',
+    'the philippines': '🇵🇭',
+    'indonesia': '🇮🇩',
+    'ecuador': '🇪🇨',
+    'mexico': '🇲🇽',
+    'brazil': '🇧🇷',
+    'spain': '🇪🇸',
+    'italy': '🇮🇹',
+    'switzerland': '🇨🇭',
+    'united states': '🇺🇸',
+    'u.s.a.': '🇺🇸',
+    'usa': '🇺🇸',
+  };
+  // Try direct match, then contains checks for multi-word strings
+  if (map[key]) return map[key];
+  const found = Object.keys(map).find(k => key.includes(k));
+  return found ? map[found] : '🌍';
+};
+
 const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose }) => {
     useEffect(() => {
         const handleEsc = (event: KeyboardEvent) => {
@@ -69,7 +97,14 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
           <p className="text-amber-400 text-2xl font-semibold mt-1 mb-6">{cigar.price}</p>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 border-y border-gray-700 py-6">
-            <DetailItem label="Origin" value={cigar.origin} />
+            <div>
+              <p className="text-sm text-amber-200 opacity-80">Origin</p>
+              <p className="font-semibold text-lg text-white flex items-center gap-2">
+                <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+                <span className="sr-only">{`${cigar.origin} flag`}</span>
+                {cigar.origin}
+              </p>
+            </div>
             <DetailItem label="Profile" value={cigar.profile} />
             <DetailItem label="Vitola" value={cigar.vitola} />
             <DetailItem label="Wrapper" value={cigar.wrapper} />
