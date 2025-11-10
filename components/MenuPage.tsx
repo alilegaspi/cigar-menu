@@ -76,7 +76,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
         </div>
 
         {/* Floating filter button */}
-        <div className="fixed left-4 bottom-4 z-20">
+        <div className="fixed left-4 bottom-4 z-50">
           <button
             onClick={() => setFilterOpen(v => !v)}
             className="w-12 h-12 rounded-full bg-amber-600 text-black font-bold shadow-lg shadow-black/40
