@@ -27,6 +27,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [filterOrigin, setFilterOrigin] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [filterProfile, setFilterProfile] = useState<string | null>(null);
 
   const origins = useMemo(() => {
     const set = new Set(sortedCigars.map(c => c.origin));
@@ -35,14 +36,22 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
     return ['Philippines', ...rest];
   }, [sortedCigars]);
 
+  const profiles = useMemo(() => {
+    const set = new Set(sortedCigars.map(c => c.profile));
+    return Array.from(set).sort((a,b)=>a.localeCompare(b));
+  }, [sortedCigars]);
+
   const visibleCigars = useMemo(() => {
     let base = filterOrigin ? sortedCigars.filter(c => c.origin === filterOrigin) : sortedCigars;
+    if (filterProfile) {
+      base = base.filter(c => c.profile === filterProfile);
+    }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       base = base.filter(c => c.name.toLowerCase().includes(q));
     }
     return base;
-  }, [sortedCigars, filterOrigin, searchQuery]);
+  }, [sortedCigars, filterOrigin, filterProfile, searchQuery]);
 
   return (
     <div className="relative p-4 sm:p-8 min-h-screen bg-black overflow-auto">
@@ -108,8 +117,8 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
               <p className="text-xs uppercase tracking-wider text-amber-200 mb-2">Filter by Country</p>
               <div className="flex flex-col gap-2 max-h-64 overflow-auto pr-1">
                 <button
-                  onClick={() => { setFilterOrigin(null); setFilterOpen(false); }}
-                  className={`text-left px-3 py-2 rounded-md transition ${!filterOrigin ? 'bg-amber-700 text-black' : 'bg-gray-800 text-gray-200 hover:bg-gray-700'}`}
+                  onClick={() => { setFilterOrigin(null); setFilterProfile(null); setSearchQuery(''); setFilterOpen(false); }}
+                  className={`text-left px-3 py-2 rounded-md transition ${!filterOrigin && !filterProfile && !searchQuery ? 'bg-amber-700 text-black' : 'bg-gray-800 text-gray-200 hover:bg-gray-700'}`}
                 >
                   Show All
                 </button>
@@ -120,6 +129,25 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
                     className={`text-left px-3 py-2 rounded-md transition ${filterOrigin === origin ? 'bg-amber-700 text-black' : 'bg-gray-800 text-gray-200 hover:bg-gray-700'}`}
                   >
                     {origin}
+                  </button>
+                ))}
+              </div>
+
+              <p className="text-xs uppercase tracking-wider text-amber-200 mt-4 mb-2">Filter by Profile</p>
+              <div className="flex flex-col gap-2 max-h-48 overflow-auto pr-1">
+                <button
+                  onClick={() => { setFilterProfile(null); setFilterOpen(false); }}
+                  className={`text-left px-3 py-2 rounded-md transition ${!filterProfile ? 'bg-amber-700 text-black' : 'bg-gray-800 text-gray-200 hover:bg-gray-700'}`}
+                >
+                  Any Profile
+                </button>
+                {profiles.map(profile => (
+                  <button
+                    key={profile}
+                    onClick={() => { setFilterProfile(profile); setFilterOpen(false); }}
+                    className={`text-left px-3 py-2 rounded-md transition ${filterProfile === profile ? 'bg-amber-700 text-black' : 'bg-gray-800 text-gray-200 hover:bg-gray-700'}`}
+                  >
+                    {profile}
                   </button>
                 ))}
               </div>
