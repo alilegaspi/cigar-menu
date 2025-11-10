@@ -51,7 +51,7 @@ const MenuPage: React.FC = () => {
   }, [sortedCigars, filterOrigin, filterProfile, searchQuery]);
 
   return (
-  <div className="relative min-h-screen bg-black overflow-auto">
+  <div className="relative min-h-screen bg-black">
       <img 
         src={backgroundImage}
         alt="Cigar collection background"
@@ -59,7 +59,7 @@ const MenuPage: React.FC = () => {
       />
       <div className="fixed inset-0 bg-black/50 z-0" />
       
-      <header className="fixed top-0 left-0 right-0 z-50 relative overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-4">
+  <header className="fixed top-0 left-0 right-0 z-[60] relative overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-4">
         {/* Header background image */}
         <img
           src={headerBgImage}
@@ -79,7 +79,10 @@ const MenuPage: React.FC = () => {
         {/* Darken for contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40" aria-hidden="true" />
 
-        <h1 className="relative font-serif text-4xl md:text-5xl font-bold text-center tracking-wide text-[#ff1a1a]">
+        <h1
+          className="relative font-serif text-4xl md:text-5xl font-bold text-center tracking-wide text-[#ff1a1a] drop-shadow-[0_0_10px_rgba(255,26,26,0.35)]"
+          style={{ color: '#ff1a1a' }}
+        >
           Ruby Wong's Cigars
         </h1>
       </header>
