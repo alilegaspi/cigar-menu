@@ -13,6 +13,17 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
   const [selectedCigar, setSelectedCigar] = useState<Cigar | null>(null);
   const backgroundImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
 
+  // Sort cigars by origin: Philippines first, then other origins alphabetically; within origin, sort by name
+  const sortedCigars = [...CIGARS_DATA].sort((a, b) => {
+    const pri = (o: string) => (o === 'Philippines' ? 0 : 1);
+    const pa = pri(a.origin);
+    const pb = pri(b.origin);
+    if (pa !== pb) return pa - pb;
+    const oCmp = a.origin.localeCompare(b.origin);
+    if (oCmp !== 0) return oCmp;
+    return a.name.localeCompare(b.name);
+  });
+
   return (
     <div className="relative p-4 sm:p-8 min-h-screen bg-black overflow-auto">
       <img 
@@ -40,11 +51,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {[
-            // Philippines first (stable order among themselves), then others
-            ...CIGARS_DATA.filter(c => c.origin === 'Philippines'),
-            ...CIGARS_DATA.filter(c => c.origin !== 'Philippines')
-          ].map((cigar) => (
+          {sortedCigars.map((cigar) => (
             <CigarCard
               key={cigar.id}
               cigar={cigar}
