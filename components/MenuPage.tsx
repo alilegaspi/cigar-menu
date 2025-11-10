@@ -26,6 +26,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
 
   const [filterOpen, setFilterOpen] = useState(false);
   const [filterOrigin, setFilterOrigin] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const origins = useMemo(() => {
     const set = new Set(sortedCigars.map(c => c.origin));
@@ -35,9 +36,13 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
   }, [sortedCigars]);
 
   const visibleCigars = useMemo(() => {
-    const base = filterOrigin ? sortedCigars.filter(c => c.origin === filterOrigin) : sortedCigars;
+    let base = filterOrigin ? sortedCigars.filter(c => c.origin === filterOrigin) : sortedCigars;
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      base = base.filter(c => c.name.toLowerCase().includes(q));
+    }
     return base;
-  }, [sortedCigars, filterOrigin]);
+  }, [sortedCigars, filterOrigin, searchQuery]);
 
   return (
     <div className="relative p-4 sm:p-8 min-h-screen bg-black overflow-auto">
@@ -88,6 +93,18 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
 
           {filterOpen && (
             <div className="mt-3 p-3 rounded-lg bg-gray-900/95 border border-gray-700 shadow-xl w-56">
+              {/* Search by name */}
+              <div className="mb-3">
+                <label className="text-xs uppercase tracking-wider text-amber-200 block mb-1">Search by Name</label>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Type cigar name..."
+                  className="w-full px-2 py-1 rounded bg-gray-800 text-gray-200 border border-gray-600 focus:outline-none focus:border-amber-500 text-sm"
+                />
+              </div>
+
               <p className="text-xs uppercase tracking-wider text-amber-200 mb-2">Filter by Country</p>
               <div className="flex flex-col gap-2 max-h-64 overflow-auto pr-1">
                 <button
