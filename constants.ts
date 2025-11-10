@@ -391,5 +391,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'N/A',
     filler: 'N/A',
     description: 'Richly aromatic and indulgently smooth, Flor de Filipinas Chocolate Panetela is a cocoa-infused treat designed for those who enjoy sweet, full-flavored smokes. A satisfying companion to coffee, dessert, or a cozy evening unwind. Deep and decadent, this 5 × 35 Panetela delivers a smooth draw layered with chocolate truffle notes. Crafted with care and wrapped in fine Java, it\'s a flavorful pleasure with every puff.',
+  },
+  {
+    id: 29,
+    name: 'FLAVORED PANETELAS HONEY',
+    image: '/images/FLAVORED PANETELAS HONEY.jpg',
+    detailsImage: '/images/FLAVORED PANETELAS HONEY.jpg',
+    price: '₱300.00',
+    origin: 'Philippines',
+    profile: 'Mild',
+    vitola: '5x35 Panetela',
+    wrapper: 'N/A',
+    binder: 'N/A',
+    filler: 'N/A',
+    description: 'Delicately sweet and incredibly smooth, Flor de Filipinas Honey Panetela offers a gentle, golden flavor profile that\'s easy to love. Mellow with a golden nectar finish, the Honey Panetela offers a smooth draw and subtle sweetness. Easy to love and hard to put down, it\'s a gentle aromatic smoke ideal for laid-back afternoons or pairing with tea and light spirits.',
   }
 ];
