@@ -237,5 +237,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Dominican Republic',
     filler: 'Dominican Republic',
     description: 'AVO XO embodies the pinnacle of craftsmanship from the renowned AVO brand, showcasing tobaccos that have been meticulously aged for a minimum of six years to achieve exceptional quality. Dominican binders and long-fillers are elegantly wrapped in a luxurious Ecuadorian Connecticut leaf, prized for its smooth, golden appearance and sophisticated presentation. The smoking experience unfolds with an intricate blend of flavors—cedar, salted cashews, sweet molasses, charred wood, earth, leather, and delicate spices—each note seamlessly complementing the next, creating a truly remarkable sensory journey. The AVO XO Intermezzo offers both seasoned connoisseurs and newcomers a refined, balanced, and exceptionally smooth experience, exemplifying the finest in premium cigar craftsmanship.',
+  },
+  {
+    id: 18,
+    name: 'CAO FLATHEAD V660 CARB',
+    image: '/images/CAO FLATHEAD V660 CARB.jpg',
+    detailsImage: '/images/CAO FLATHEAD V660 CARB.jpg',
+    price: '₱2,300.00',
+    origin: 'Nicaragua',
+    profile: 'Medium - Full',
+    vitola: '6x60 Gordo',
+    wrapper: 'Connecticut Broadleaf',
+    binder: 'Nicaragua',
+    filler: 'Nicaragua',
+    description: 'Borrowing inspiration from 1950\'s American muscle cars, Flathead premium cigar boasts a unique squared-off head meant to mimic an engine block. This highly unusual shape contains a bold, full-bodied blend of tobaccos. The dark Connecticut Broadleaf Maduro wrapper conceals Nicaraguan and Dominican long-fillers, secured by a Connecticut Habano binder. Notes of ripe fruit, leather and molasses culminate into a rich smoking experience that lingers long after you finish. With a 95 rating from Cigar Aficionado and named the #3 Cigar of 2015, Flathead stands out as the highest rated 60-ring cigar ever.',
   }
 ];
