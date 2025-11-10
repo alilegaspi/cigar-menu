@@ -10,7 +10,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(/cigar-menu/images/landing page.jpg)`,
+          backgroundImage: `url(/cigar-menu/images/landing-page.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
