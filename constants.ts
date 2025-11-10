@@ -335,5 +335,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaraguan',
     filler: 'Nicaraguan',
     description: 'The Illusione Epernay pays tribute to the renowned Epernay region of France, the capital of Champagne, with a blend designed to pair perfectly with a glass of champagne. This cigar offers a sweeter alternative to the original Illusione by Don Giolito. A medium-bodied smoke, it delivers straightforward notes of coffee bean, wood, and cinnamon, leaving a slightly tart, citrus-tinged aftertaste. Featuring a light, shade-grown Corojo \'99 wrapper, this Nicaraguan puro is a true masterpiece - a sublime smoking experience worthy of being counted among the best.',
+  },
+  {
+    id: 25,
+    name: 'DEADWOOD LEATHER ROSE TORPEDO',
+    image: '/images/DEADWOOD LEATHER ROSE TORPEDO.jpg',
+    detailsImage: '/images/DEADWOOD LEATHER ROSE TORPEDO.jpg',
+    price: '₱2,000.00',
+    origin: 'Nicaragua',
+    profile: 'Medium',
+    vitola: '5x54 Torpedo',
+    wrapper: 'Maduro',
+    binder: 'Indonesian',
+    filler: 'Nicaraguan',
+    description: 'The Leather Rose, the spiciest addition to the Deadwood line, is just as delectable as its sister cigar, Sweet Jane, but with a bold new look. This 5" x 54 handcrafted Torpedo from Drew Estate\'s Nicaraguan factory features a voluptuous blend of sweet and aromatic tobaccos, cloaked in a dark, rustic Maduro wrapper. The sweetened wrapper leaf beautifully complements the thick notes of chocolate, coffee, wood, leather, berries, and spice that build to a grand, sweet-yet-peppery finale. Rich, spicy, and deliciously sweet, the Leather Rose is the perfect pairing for a whiskey sour.',
   }
 ];
