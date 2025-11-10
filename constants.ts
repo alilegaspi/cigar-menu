@@ -307,5 +307,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Dominican Republic',
     filler: 'Dominican Republic / Nicaragua / Peru',
     description: 'The Montecristo Platinum Series cigars were crafted to give Montecristo aficionados a bolder, fuller-bodied rendition of a classic. Hand-rolled in the Dominican Republic, these premium cigars feature a lively Mexican San Andres wrapper enclosing a special blend of aged Dominican, Nicaraguan, and Peruvian long-filler tobaccos. With rich, smooth, medium-to-full bodied flavors reminiscent of earth, raisins, leather, black coffee, and wood, these exquisitely balanced, Cubanesque cigars make for the ideal after-dinner indulgence.',
+  },
+  {
+    id: 23,
+    name: 'DAVIDOFF GRAND CRU NO.3',
+    image: '/images/DAVIDOFF GRAND CRU NO.3.jpg',
+    detailsImage: '/images/DAVIDOFF GRAND CRU NO.3.jpg',
+    price: '₱3,500.00',
+    origin: 'Dominican Republic',
+    profile: 'Mild - Medium',
+    vitola: '5x43 Corona',
+    wrapper: 'Ecuadorian',
+    binder: 'Dominican Republic',
+    filler: 'Dominican Republic',
+    description: 'The Davidoff Grand Cru No. 3 is a classic ultra-premium cigar, rolled at Davidoff\'s renowned factory in the Dominican Republic. This sophisticated blend uses only the finest, meticulously selected tobacco leaves, resulting in a mild, lightly floral cigar with a delightful nutty finish. With its medium-bodied profile and gourmet notes of nuts, cream, spice, and cedar, the Grand Cru offers a sumptuous smoking experience. The Ecuadorian Connecticut Shade wrapper, Dominican binder, and premium Dominican filler come together seamlessly. This cigar pairs exceptionally well with a glass of Bordeaux, making it the perfect companion after a hearty lunch.',
   }
 ];
