@@ -15,7 +15,7 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
     >
       <div className="relative h-64">
         <img
-          src={`${import.meta.env.BASE_URL}${cigar.detailsImage || cigar.image}`}
+          src={`${import.meta.env.BASE_URL}${cigar.image}`}
           alt={cigar.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
