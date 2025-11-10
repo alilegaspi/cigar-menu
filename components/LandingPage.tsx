@@ -23,7 +23,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
         onClick={onEnter}
         className="relative z-20 font-serif bg-red-800 text-amber-100 font-bold py-3 px-12 text-xl rounded-sm tracking-widest
                   hover:bg-red-700 transition-colors duration-300
-                  transform hover:scale-105 shadow-2xl shadow-black/60 mb-[35vh] md:mb-32"
+                  transform hover:scale-105 shadow-2xl shadow-black/60 mb-[40vh] md:mb-32"
       >
         Cigar Menu
       </button>
