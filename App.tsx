@@ -17,7 +17,7 @@ const App: React.FC = () => {
   return (
     <div className="bg-gray-900 min-h-screen text-white">
       {page === 'landing' && <LandingPage onEnter={goToMenu} />}
-      {page === 'menu' && <MenuPage onBack={goToLanding} />}
+  {page === 'menu' && <MenuPage />}
     </div>
   );
 };

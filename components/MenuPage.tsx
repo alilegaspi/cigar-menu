@@ -5,11 +5,7 @@ import { Cigar } from '../types';
 import CigarCard from './CigarCard';
 import CigarDetailsModal from './CigarDetailsModal';
 
-interface MenuPageProps {
-  onBack: () => void;
-}
-
-const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
+const MenuPage: React.FC = () => {
   const [selectedCigar, setSelectedCigar] = useState<Cigar | null>(null);
   const backgroundImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
 
@@ -62,21 +58,11 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
       />
       <div className="fixed inset-0 bg-black/50 z-0" />
       
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center bg-black/80 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
-          <button
-            onClick={onBack}
-            className="flex items-center text-amber-300 hover:text-amber-100 transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Home
-          </button>
-          <h1 className="font-serif text-3xl md:text-4xl font-bold text-center text-amber-100 tracking-wide">
-            Ruby Wong Cigars
-          </h1>
-          <div className="w-24 hidden sm:block"></div> {/* Spacer */}
-        </header>
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center bg-black/80 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-center text-red-500 tracking-wide">
+          Ruby Wong's Cigars
+        </h1>
+      </header>
 
       <div className="pt-24 px-4 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
