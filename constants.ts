@@ -321,5 +321,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Dominican Republic',
     filler: 'Dominican Republic',
     description: 'The Davidoff Grand Cru No. 3 is a classic ultra-premium cigar, rolled at Davidoff\'s renowned factory in the Dominican Republic. This sophisticated blend uses only the finest, meticulously selected tobacco leaves, resulting in a mild, lightly floral cigar with a delightful nutty finish. With its medium-bodied profile and gourmet notes of nuts, cream, spice, and cedar, the Grand Cru offers a sumptuous smoking experience. The Ecuadorian Connecticut Shade wrapper, Dominican binder, and premium Dominican filler come together seamlessly. This cigar pairs exceptionally well with a glass of Bordeaux, making it the perfect companion after a hearty lunch.',
+  },
+  {
+    id: 24,
+    name: 'ILLUSIONE EPERNAY LE MONDE',
+    image: '/images/ILLUSIONE EPERNAY LE MONDE.jpg',
+    detailsImage: '/images/ILLUSIONE EPERNAY LE MONDE.jpg',
+    price: '₱2,300.00',
+    origin: 'Honduras',
+    profile: 'Medium',
+    vitola: '6 1/4x52 Toro',
+    wrapper: 'Nicaraguan',
+    binder: 'Nicaraguan',
+    filler: 'Nicaraguan',
+    description: 'The Illusione Epernay pays tribute to the renowned Epernay region of France, the capital of Champagne, with a blend designed to pair perfectly with a glass of champagne. This cigar offers a sweeter alternative to the original Illusione by Don Giolito. A medium-bodied smoke, it delivers straightforward notes of coffee bean, wood, and cinnamon, leaving a slightly tart, citrus-tinged aftertaste. Featuring a light, shade-grown Corojo \'99 wrapper, this Nicaraguan puro is a true masterpiece - a sublime smoking experience worthy of being counted among the best.',
   }
 ];
