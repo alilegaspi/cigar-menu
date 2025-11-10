@@ -8,7 +8,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
   const imagePath = import.meta.env.BASE_URL + 'images/landing-page.jpg';
   
   return (
-    <div className="relative flex flex-col items-center justify-end h-screen bg-black p-4 pb-32 md:pb-40 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-end h-screen bg-black p-4 pb-12 md:pb-16 overflow-hidden">
       <img 
         src={imagePath}
         alt="Landing background"
