@@ -50,7 +50,11 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
         </button>
         
         <div className="w-full md:w-1/3 flex-shrink-0 relative aspect-square">
-          <img src={cigar.image} alt={cigar.name} className="w-full h-full object-contain rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
+          <img 
+            src={`${import.meta.env.BASE_URL}${cigar.image}`} 
+            alt={cigar.name} 
+            className="w-full h-full object-contain rounded-t-lg md:rounded-l-lg md:rounded-t-none" 
+          />
         </div>
         
         <div className="p-8 flex-1 flex flex-col">

@@ -3,8 +3,8 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 1,
     name: 'ANTONIO GIMENEZ CHURCHILL',
-    image: '/images/ANTONIO GIMENEZ CHURCHILL.png',
-    detailsImage: '/images/ANTONIO GIMENEZ CHURCHILL details.png',
+    image: 'images/ANTONIO GIMENEZ CHURCHILL.png',
+    detailsImage: 'images/ANTONIO GIMENEZ CHURCHILL details.png',
     price: '₱',
     origin: 'Nicaragua',
     profile: 'Medium-Full',

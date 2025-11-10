@@ -15,13 +15,13 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
     >
       <div className="relative h-64">
         <img
-          src={cigar.image}
+          src={`${import.meta.env.BASE_URL}${cigar.image}`}
           alt={cigar.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
         <img
-          src="/images/ruby-wong-s-godown-circular-logo.png"
+          src={`${import.meta.env.BASE_URL}images/RWG.png`}
           alt="Ruby Wong's Godown Logo"
           className="absolute top-4 right-4 w-14 h-14 object-contain opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           aria-hidden="true"
