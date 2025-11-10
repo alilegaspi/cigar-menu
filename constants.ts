@@ -209,5 +209,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Connecticut Broadleaf',
     filler: 'Dominican Republic / Honduras / Nicaragua',
     description: 'The Hoyo de Monterrey Excalibur is a premium, full-flavored cigar that stands in a class of its own. Handcrafted by the skilled artisans behind Hoyo de Monterrey, these cigars are made using only the top 10% of the finest tobacco from Honduras and Nicaragua. Each Excalibur cigar is carefully selected from the renowned Hoyo de Monterrey tobacco fields, and undergoes additional aging to ensure a refined and exceptional smoking experience. Regarded by many connoisseurs as one of the finest Honduran cigars available, the Excalibur offers a rich, smooth profile that is sure to satisfy the most discerning cigar enthusiasts.',
+  },
+  {
+    id: 16,
+    name: 'ALEC & BRADLEY GATEKEEPER ROBUSTO',
+    image: '/images/ALEC & BRADLEY GATEKEEPER ROBUSTO.jpg',
+    detailsImage: '/images/ALEC & BRADLEY GATEKEEPER ROBUSTO.jpg',
+    price: '₱2,000.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium',
+    vitola: '5x50 Robusto',
+    wrapper: 'Ecuadorian Connecticut',
+    binder: 'Nicaraguan',
+    filler: 'Dominican Republic / Nicaraguan',
+    description: 'Gatekeeper is the second line introduced by Rubin\'s sons, building on a legacy of craftsmanship and expertise. Encased in a rich Ecuadorian Habano wrapper, this cigar is complemented by a Nicaraguan binder and fillers sourced from both the Dominican Republic and Nicaragua. Its smooth, full-bodied profile offers a complex array of flavors, with prominent notes of cedar, nuts, and leather. The construction reflects the high standards of the renowned factory behind such iconic cigars as the Prensado. Gatekeeper is not just a cigar; it represents the passing of knowledge and skill from one generation to the next, a tribute to a great man\'s enduring influence.',
   }
 ];
