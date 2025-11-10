@@ -153,5 +153,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaraguan',
     filler: 'Nicaraguan',
     description: 'The HS Series White Shade Grown features a silky-smooth Connecticut Shade wrapper enveloping a blend of long-filler tobaccos from Nicaragua, providing a mellow-medium body. Subtle notes of leather, cedar, spices, pepper, and caramel mingle throughout the mellow and creamy smoking experience, culminating in a smooth, sweet finish.',
+  },
+  {
+    id: 12,
+    name: 'Punch Grand Puro Rancho',
+    image: '/images/Punch Grand Puro Rancho.jpg',
+    detailsImage: '/images/Punch Grand Puro Rancho.jpg',
+    price: '₱1,500.00',
+    origin: 'Honduras',
+    profile: 'Medium - Full',
+    vitola: '5.5x54 Robusto',
+    wrapper: 'Honduran (Havana Seed)',
+    binder: 'Honduran',
+    filler: 'Honduran',
+    description: 'Punch is one of the original cigar brands developed in Honduras, proudly reflecting the country\'s long-standing tradition of expert tobacco curing. True to its name, the Punch Gran Puro Rancho delivers a bold, full-flavored smoking experience. Crafted handmade entirely from premium Honduran tobacco, this robusto offers rich, earthy, and creamy notes, wrapped in a striking Colorado Maduro wrapper. Expect a smooth yet intense profile, as flavors of cedar and earth meld seamlessly with the signature Honduran spice—making it an ideal choice for fans of fuller-bodied cigars.',
   }
 ];
