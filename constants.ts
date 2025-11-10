@@ -349,5 +349,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Indonesian',
     filler: 'Nicaraguan',
     description: 'The Leather Rose, the spiciest addition to the Deadwood line, is just as delectable as its sister cigar, Sweet Jane, but with a bold new look. This 5" x 54 handcrafted Torpedo from Drew Estate\'s Nicaraguan factory features a voluptuous blend of sweet and aromatic tobaccos, cloaked in a dark, rustic Maduro wrapper. The sweetened wrapper leaf beautifully complements the thick notes of chocolate, coffee, wood, leather, berries, and spice that build to a grand, sweet-yet-peppery finale. Rich, spicy, and deliciously sweet, the Leather Rose is the perfect pairing for a whiskey sour.',
+  },
+  {
+    id: 26,
+    name: 'JOYA CABINETTA CHURCHILL',
+    image: '/images/JOYA CABINETTA CHURCHILL.jpg',
+    detailsImage: '/images/JOYA CABINETTA CHURCHILL.jpg',
+    price: '₱2,000.00',
+    origin: 'Nicaragua',
+    profile: 'Mild - Medium',
+    vitola: '6 7/8x48 Churchill',
+    wrapper: 'Ecuadorian Connecticut Shade, Nicaraguan Habana Criollo',
+    binder: 'Nicaragua',
+    filler: 'Nicaragua',
+    description: 'Since 1968, Joya de Nicaragua has been known for producing full-bodied, powerful cigars. However, with their Cabinetta line, they have crafted a markedly different experience - one that is creamy and mild. Cabinetta cigars feature a dark, coffee-hued Nicaraguan Criollo wrapper, blended with a creamy, light Ecuadorian Shade wrapper. This unique combination lends a complex array of flavors and aromas. In contrast to other Joya cigars, the medium-bodied Cabinetta is less demanding on the palate. Carefully selected Nicaraguan long-fillers deliver a solid, smooth smoking experience that is worthy of praise.',
   }
 ];
