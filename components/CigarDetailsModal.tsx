@@ -1,4 +1,4 @@
-
+﻿
 import React, { useEffect } from 'react';
 import { Cigar } from '../types';
 
@@ -55,6 +55,12 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
             alt={cigar.name} 
             className="w-full h-full object-contain rounded-t-lg md:rounded-l-lg md:rounded-t-none" 
           />
+          <img
+            src={`${import.meta.env.BASE_URL}images/RWG.png`}
+            alt="Ruby Wong's Godown Logo"
+            className="absolute top-4 left-4 w-14 h-14 object-contain opacity-90"
+            aria-hidden="true"
+          />
         </div>
         
         <div className="p-8 flex-1 flex flex-col">
@@ -95,3 +101,4 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
 };
 
 export default CigarDetailsModal;
+
