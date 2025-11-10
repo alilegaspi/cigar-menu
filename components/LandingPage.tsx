@@ -5,12 +5,18 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
+  const imagePath = import.meta.env.BASE_URL + 'images/landing-page.jpg';
+  
   return (
     <div className="relative flex flex-col items-center justify-end h-screen bg-black p-4 pb-20 md:pb-24 overflow-hidden">
       <img 
-        src="/cigar-menu/images/landing-page.jpg"
+        src={imagePath}
         alt="Landing background"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
+        onError={(e) => {
+          console.error('Failed to load image:', imagePath);
+          e.currentTarget.style.display = 'none';
+        }}
       />
       <div className="absolute inset-0 bg-black/40 z-10" />
       <button
