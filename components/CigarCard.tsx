@@ -32,6 +32,9 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
           {cigar.name}
         </h3>
         <p className="text-gray-400 mt-1">{cigar.origin}</p>
+        <p className="text-gray-300 text-sm mt-2 line-clamp-2">
+          {cigar.profile} • {cigar.vitola} • {cigar.wrapper}
+        </p>
         <p className="text-amber-400 text-xl font-semibold mt-4">{cigar.price}</p>
       </div>
     </div>
