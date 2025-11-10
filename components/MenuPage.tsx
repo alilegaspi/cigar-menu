@@ -59,7 +59,7 @@ const MenuPage: React.FC = () => {
       />
       <div className="fixed inset-0 bg-black/50 z-0" />
       
-  <header className="fixed top-0 left-0 right-0 z-[60] relative overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
+  <header className="fixed top-0 left-0 right-0 z-[60] overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
         {/* Header background image */}
         <img
           src={headerBgImage}
