@@ -99,10 +99,10 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 border-y border-gray-700 py-6">
             <div>
               <p className="text-sm text-amber-200 opacity-80">Origin</p>
-              <p className="font-semibold text-lg text-white flex items-center gap-2">
-                <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
-                <span className="sr-only">{`${cigar.origin} flag`}</span>
-                {cigar.origin}
+              <p className="font-semibold text-lg text-white flex items-center">
+                <span role="img" aria-label={`${cigar.origin} flag`}>
+                  {getFlagEmoji(cigar.origin)}
+                </span>
               </p>
             </div>
             <DetailItem label="Profile" value={cigar.profile} />
