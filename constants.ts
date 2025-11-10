@@ -251,5 +251,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaragua',
     filler: 'Nicaragua',
     description: 'Borrowing inspiration from 1950\'s American muscle cars, Flathead premium cigar boasts a unique squared-off head meant to mimic an engine block. This highly unusual shape contains a bold, full-bodied blend of tobaccos. The dark Connecticut Broadleaf Maduro wrapper conceals Nicaraguan and Dominican long-fillers, secured by a Connecticut Habano binder. Notes of ripe fruit, leather and molasses culminate into a rich smoking experience that lingers long after you finish. With a 95 rating from Cigar Aficionado and named the #3 Cigar of 2015, Flathead stands out as the highest rated 60-ring cigar ever.',
+  },
+  {
+    id: 19,
+    name: 'CALDWELL THE KING IS DEAD PREMIER',
+    image: '/images/CALDWELL THE KING IS DEAD PREMIER.jpg',
+    detailsImage: '/images/CALDWELL THE KING IS DEAD PREMIER.jpg',
+    price: '₱2,300.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium - Full',
+    vitola: '5.5x50 Robusto',
+    wrapper: 'Dominican Republic (Negrito)',
+    binder: 'Dominican',
+    filler: 'Dominican',
+    description: 'The Caldwell The King is Dead Premier is a distinguished premium cigar, expertly handcrafted in the Dominican Republic. Showcasing a rare Negrito wrapper, this blend is paired with a Dominican Corona binder and meticulously aged long-fillers for a complex, well-balanced experience. Upon lighting, the cigar opens with smooth notes of milk chocolate, gradually deepening into rich flavors of coffee and spice. As the profile develops, layers of cedar, earth, and subtle sweetness emerge, offering a dynamic and satisfying smoke. With a consistent nutty sweetness and an even, dependable burn, this cigar exemplifies both indulgence and craftsmanship.',
   }
 ];
