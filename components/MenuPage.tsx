@@ -8,6 +8,7 @@ import CigarDetailsModal from './CigarDetailsModal';
 const MenuPage: React.FC = () => {
   const [selectedCigar, setSelectedCigar] = useState<Cigar | null>(null);
   const backgroundImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
+  const headerBgImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
 
   // Sort cigars by origin: Philippines first, then other origins alphabetically; within origin, sort by name
   const sortedCigars = useMemo(() => [...CIGARS_DATA].sort((a, b) => {
@@ -58,8 +59,27 @@ const MenuPage: React.FC = () => {
       />
       <div className="fixed inset-0 bg-black/50 z-0" />
       
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center bg-black/80 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold text-center text-red-500 tracking-wide">
+      <header className="fixed top-0 left-0 right-0 z-50 relative overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-4">
+        {/* Header background image */}
+        <img
+          src={headerBgImage}
+          alt="Cigar header background"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          aria-hidden="true"
+        />
+        {/* Smoke overlay (subtle, top-focused) */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40 blur-sm"
+          style={{
+            backgroundImage:
+              'radial-gradient(120% 60% at 50% -20%, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.12) 30%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0.02) 60%, rgba(255,255,255,0) 75%)'
+          }}
+          aria-hidden="true"
+        />
+        {/* Darken for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40" aria-hidden="true" />
+
+        <h1 className="relative font-serif text-4xl md:text-5xl font-bold text-center tracking-wide text-[#ff1a1a]">
           Ruby Wong's Cigars
         </h1>
       </header>
