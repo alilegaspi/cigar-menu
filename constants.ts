@@ -279,5 +279,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Mexico',
     filler: 'Brazil, Honduras, Nicaragua, Peru',
     description: 'Experience the exceptional Avo Syncro Ritmo, a masterpiece that showcases the perfect harmony of premium tobaccos from seven different countries. This remarkable handmade creation is elegantly wrapped in a silky Ecuadorian wrapper, demonstrating Avo\'s unparalleled blending expertise. Your journey begins with an exciting burst of bold pepper that awakens your senses, seamlessly transitioning to a perfectly balanced symphony of roasted nuts, rich cocoa, and robust black coffee notes. With each draw, you\'ll savor the creamy, sweet finish that makes this extraordinary cigar an absolute pleasure from first light to final puff. Treat yourself to the Avo Syncro Ritmo – a truly satisfying indulgence that cigar connoisseurs can\'t resist.',
+  },
+  {
+    id: 21,
+    name: 'MONTECRISTO WHITE SERIES ROTHSCHILDE',
+    image: '/images/MONTECRISTO WHITE SERIES ROTHSCHILDE.jpg',
+    detailsImage: '/images/MONTECRISTO WHITE SERIES ROTHSCHILDE.jpg',
+    price: '₱2,300.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium',
+    vitola: '5x52 Robusto',
+    wrapper: 'Ecuador Connecticut Shade',
+    binder: 'Nicaragua',
+    filler: 'Dominican Republic; Nicaragua',
+    description: 'Montecristo, one of the world\'s most coveted luxury brands, elevates its legendary portfolio with the bold and sumptuous Montecristo White cigar. Masterfully blending premium Dominican and Nicaraguan long fillers beneath a Connecticut-seed Ecuadorian shade grown wrapper, this exceptional smoke delivers a smooth yet robust experience that connoisseurs crave. Expertly handcrafted, this medium-bodied masterpiece unfolds with luxurious notes of supple leather, tantalizing spice, aromatic cedar, freshly baked bread, and rich cocoa. The extraordinary refinement and complexity of these flavors create such a memorable smoking journey that even aficionados who typically prefer fuller-bodied cigars will find themselves irresistibly drawn to the Montecristo White\'s sophisticated charm.',
   }
 ];
