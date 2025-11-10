@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Cigar Menu",
+  "description": "An elegant, interactive menu for a cigar lounge, allowing users to browse a selection of cigars and view their detailed profiles.",
+  "requestFramePermissions": []
+}
