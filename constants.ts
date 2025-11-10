@@ -377,5 +377,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'N/A',
     filler: 'N/A',
     description: 'Fragrant, fruity, and pleasantly smooth, Flor de Filipinas Cherry Panetela is a vibrant choice for those who enjoy a sweeter, more playful smoking experience. It\'s a flavorful companion to breezy afternoons or relaxed hangouts.',
+  },
+  {
+    id: 28,
+    name: 'FLAVORED PANETELAS CHOCOLATE',
+    image: '/images/FLAVORED PANETELAS CHOCOLATE.jpg',
+    detailsImage: '/images/FLAVORED PANETELAS CHOCOLATE.jpg',
+    price: '₱300.00',
+    origin: 'Philippines',
+    profile: 'Mild',
+    vitola: '5x35 Panetela',
+    wrapper: 'Java',
+    binder: 'N/A',
+    filler: 'N/A',
+    description: 'Richly aromatic and indulgently smooth, Flor de Filipinas Chocolate Panetela is a cocoa-infused treat designed for those who enjoy sweet, full-flavored smokes. A satisfying companion to coffee, dessert, or a cozy evening unwind. Deep and decadent, this 5 × 35 Panetela delivers a smooth draw layered with chocolate truffle notes. Crafted with care and wrapped in fine Java, it\'s a flavorful pleasure with every puff.',
   }
 ];
