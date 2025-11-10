@@ -73,7 +73,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
             </svg>
             Back to Home
           </button>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-center text-amber-100">
+          <h1 className="font-serif text-3xl md:text-4xl font-bold text-center text-amber-100 tracking-wide">
             Ruby Wong Cigars
           </h1>
           <div className="w-24 hidden sm:block"></div> {/* Spacer */}
