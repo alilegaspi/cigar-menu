@@ -293,5 +293,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Nicaragua',
     filler: 'Dominican Republic; Nicaragua',
     description: 'Montecristo, one of the world\'s most coveted luxury brands, elevates its legendary portfolio with the bold and sumptuous Montecristo White cigar. Masterfully blending premium Dominican and Nicaraguan long fillers beneath a Connecticut-seed Ecuadorian shade grown wrapper, this exceptional smoke delivers a smooth yet robust experience that connoisseurs crave. Expertly handcrafted, this medium-bodied masterpiece unfolds with luxurious notes of supple leather, tantalizing spice, aromatic cedar, freshly baked bread, and rich cocoa. The extraordinary refinement and complexity of these flavors create such a memorable smoking journey that even aficionados who typically prefer fuller-bodied cigars will find themselves irresistibly drawn to the Montecristo White\'s sophisticated charm.',
+  },
+  {
+    id: 22,
+    name: 'MONTECRISTO PLATINUM ROBUSTO',
+    image: '/images/MONTECRISTO PLATINUM ROBUSTO.jpg',
+    detailsImage: '/images/MONTECRISTO PLATINUM ROBUSTO.jpg',
+    price: '₱2,300.00',
+    origin: 'Dominican Republic',
+    profile: 'Medium - Full',
+    vitola: '5x50 Robusto',
+    wrapper: 'San Andrés',
+    binder: 'Dominican Republic',
+    filler: 'Dominican Republic / Nicaragua / Peru',
+    description: 'The Montecristo Platinum Series cigars were crafted to give Montecristo aficionados a bolder, fuller-bodied rendition of a classic. Hand-rolled in the Dominican Republic, these premium cigars feature a lively Mexican San Andres wrapper enclosing a special blend of aged Dominican, Nicaraguan, and Peruvian long-filler tobaccos. With rich, smooth, medium-to-full bodied flavors reminiscent of earth, raisins, leather, black coffee, and wood, these exquisitely balanced, Cubanesque cigars make for the ideal after-dinner indulgence.',
   }
 ];
