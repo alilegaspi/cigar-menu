@@ -80,7 +80,7 @@ const MenuPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40" aria-hidden="true" />
 
         <h1
-          className="relative font-serif text-3xl md:text-[2.75rem] font-bold text-center tracking-wide text-[#ff1a1a] drop-shadow-[0_0_10px_rgba(255,26,26,0.35)]"
+          className="relative font-serif text-[2rem] md:text-[3rem] font-bold text-center tracking-wide text-[#ff1a1a] drop-shadow-[0_0_10px_rgba(255,26,26,0.35)]"
           style={{ color: '#ff1a1a' }}
         >
           Ruby Wong's Cigars
