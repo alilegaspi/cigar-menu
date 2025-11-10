@@ -43,6 +43,7 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+          aria-label="Close"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -76,12 +77,21 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
             <DetailItem label="Filler" value={cigar.filler} />
           </div>
 
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full mb-6">
             <h3 className="font-serif text-2xl font-bold text-amber-200 mb-4">Why this Cigar?</h3>
             <p className="text-gray-300 leading-relaxed text-lg">
                 {cigar.description}
             </p>
           </div>
+
+          <button
+            onClick={onClose}
+            className="w-full font-serif bg-red-800 text-amber-100 font-bold py-3 px-6 text-lg rounded-sm tracking-widest
+                      hover:bg-red-700 transition-colors duration-300
+                      transform hover:scale-105 shadow-lg shadow-black/40"
+          >
+            Back to Collection
+          </button>
         </div>
       </div>
       <style>{`
