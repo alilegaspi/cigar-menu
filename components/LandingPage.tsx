@@ -9,7 +9,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
     <div 
       className="flex flex-col items-center justify-end h-screen bg-black p-4 pb-20 md:pb-24"
       style={{
-        backgroundImage: "url('/images/landing page.jpg')",
+        backgroundImage: `url(${import.meta.env.BASE_URL}images/landing page.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
