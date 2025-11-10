@@ -63,7 +63,7 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
       <div className="fixed inset-0 bg-black/50 z-0" />
       
       <div className="relative z-10">
-        <header className="flex justify-between items-center mb-8">
+        <header className="sticky top-0 z-40 mb-8 flex justify-between items-center bg-black/70 backdrop-blur border-b border-gray-700 px-2 sm:px-0 py-3">
           <button
             onClick={onBack}
             className="flex items-center text-amber-300 hover:text-amber-100 transition-colors"
