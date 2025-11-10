@@ -167,5 +167,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Honduran',
     filler: 'Honduran',
     description: 'Punch is one of the original cigar brands developed in Honduras, proudly reflecting the country\'s long-standing tradition of expert tobacco curing. True to its name, the Punch Gran Puro Rancho delivers a bold, full-flavored smoking experience. Crafted handmade entirely from premium Honduran tobacco, this robusto offers rich, earthy, and creamy notes, wrapped in a striking Colorado Maduro wrapper. Expect a smooth yet intense profile, as flavors of cedar and earth meld seamlessly with the signature Honduran spice—making it an ideal choice for fans of fuller-bodied cigars.',
+  },
+  {
+    id: 13,
+    name: 'OLIVA SAISON MADURO TORO',
+    image: '/images/OLIVA SAISON MADURO TORO.jpg',
+    detailsImage: '/images/OLIVA SAISON MADURO TORO.jpg',
+    price: '₱1,500.00',
+    origin: 'Nicaragua',
+    profile: 'Medium - Full',
+    vitola: '6x50 Toro',
+    wrapper: 'Connecticut Broadleaf Maduro',
+    binder: 'Nicaraguan',
+    filler: 'Nicaraguan',
+    description: 'Seeking to elevate the strength and complexity of their highly acclaimed Saison line, the team at Oliva took on the challenge—and delivered with the exceptional Oliva Saison Maduro. This bold creation features a meticulously aged blend of Nicaraguan long-fillers, all harvested in 2011 from only the finest tobacco crops grown on Oliva\'s own farms. These tobaccos are expertly bound with a premium Nicaraguan binder and finished with a dark, toothy, and robust Broadleaf Maduro wrapper that enhances both body and character. The result is a rich and harmoniously layered smoking experience, offering deep notes of cedar, sweet spice, and leather, all carried by a consistently razor-sharp burn. True to Oliva\'s reputation, the construction is flawless—firm to the touch with an even, slow draw. Medium to full-bodied in strength, Oliva Saison Maduro is an ideal companion to a glass of rye whiskey, making it a perfect choice for the discerning aficionado seeking depth, balance, and refinement.',
   }
 ];
