@@ -40,7 +40,11 @@ const MenuPage: React.FC<MenuPageProps> = ({ onBack }) => {
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {CIGARS_DATA.map((cigar) => (
+          {[
+            // Philippines first (stable order among themselves), then others
+            ...CIGARS_DATA.filter(c => c.origin === 'Philippines'),
+            ...CIGARS_DATA.filter(c => c.origin !== 'Philippines')
+          ].map((cigar) => (
             <CigarCard
               key={cigar.id}
               cigar={cigar}
