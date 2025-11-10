@@ -139,5 +139,19 @@ export const CIGARS_DATA: Cigar[] = [
     binder: 'Sumatra',
     filler: 'Dominican / Hondura / Nicaragua',
     description: 'A sophisticated blend featuring a Habano wrapper with Nicaraguan Jalapa, complemented by a Sumatra binder and a complex filler blend from Dominican Republic, Honduras, and Nicaragua.',
+  },
+  {
+    id: 11,
+    name: 'HC SERIES WHITE SHADE GROWN TORO',
+    image: '/images/HC SERIES WHITE SHADE GROWN TORO.jpg',
+    detailsImage: '/images/HC SERIES WHITE SHADE GROWN TORO.jpg',
+    price: '₱1,400.00',
+    origin: 'Honduras',
+    profile: 'Mild - Medium',
+    vitola: '6x60 Toro',
+    wrapper: 'USA Connecticut Shade',
+    binder: 'Nicaraguan',
+    filler: 'Nicaraguan',
+    description: 'The HS Series White Shade Grown features a silky-smooth Connecticut Shade wrapper enveloping a blend of long-filler tobaccos from Nicaragua, providing a mellow-medium body. Subtle notes of leather, cedar, spices, pepper, and caramel mingle throughout the mellow and creamy smoking experience, culminating in a smooth, sweet finish.',
   }
 ];
