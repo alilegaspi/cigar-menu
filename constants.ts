@@ -156,9 +156,9 @@ export const CIGARS_DATA: Cigar[] = [
   },
   {
     id: 12,
-    name: 'Punch Grand Puro Rancho',
-    image: '/images/Punch Grand Puro Rancho.jpg',
-    detailsImage: '/images/Punch Grand Puro Rancho.jpg',
+    name: 'PUNCH GRAN PURO RANCHO',
+    image: '/images/PUNCH GRAN PURO RANCHO.jpg',
+    detailsImage: '/images/PUNCH GRAN PURO RANCHO.jpg',
     price: '₱1,500.00',
     origin: 'Honduras',
     profile: 'Medium - Full',
