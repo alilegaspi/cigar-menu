@@ -28,25 +28,69 @@ const getFlagEmoji = (origin: string): string => {
   return found ? map[found] : '🌍';
 };
 
-// Prefer small flag images; fallback to emoji if image is missing or fails to load.
-const getFlagImage = (origin: string): string | null => {
+// Inline SVG flag renderers for consistent desktop display (simplified designs)
+const renderInlineFlag = (origin: string) => {
   const key = origin.trim().toLowerCase();
-  const map: Record<string, string> = {
-    'philippines': 'Philippines.png',
-    'the philippines': 'Philippines.png',
-    'dominican republic': 'Dominican Republic.png',
-    'dominican  republic': 'Dominican Republic.png',
-    'nicaragua': 'Nicaragua.png',
-    // Add more country image filenames here if assets are added:
-    // 'indonesia': 'Indonesia.png',
-    // 'ecuador': 'Ecuador.png', etc.
-  };
-  if (map[key]) {
-    const path = `${import.meta.env.BASE_URL}images/${map[key]}`;
-    // Encode spaces and special chars to avoid 404s on some hosts
-    return encodeURI(path);
+  switch (key) {
+    case 'philippines':
+    case 'the philippines':
+      return (
+        <svg
+          aria-label="Philippines flag"
+          role="img"
+          viewBox="0 0 60 40"
+          className="w-5 h-5 flex-shrink-0 rounded shadow-sm"
+        >
+          <rect width="60" height="40" fill="#0038A8" />
+          <rect y="20" width="60" height="20" fill="#CE1126" />
+          <polygon points="0,0 25,20 0,40" fill="#ffffff" />
+          <circle cx="10" cy="20" r="5" fill="#FCD116" />
+          {Array.from({ length: 8 }).map((_, i) => {
+            const angle = (i * 45) * (Math.PI / 180);
+            const x1 = 10 + Math.cos(angle) * 7;
+            const y1 = 20 + Math.sin(angle) * 7;
+            const x2 = 10 + Math.cos(angle) * 10;
+            const y2 = 20 + Math.sin(angle) * 10;
+            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#FCD116" strokeWidth={1} />;
+          })}
+        </svg>
+      );
+    case 'dominican republic':
+    case 'dominican  republic':
+      return (
+        <svg
+          aria-label="Dominican Republic flag"
+          role="img"
+          viewBox="0 0 60 40"
+          className="w-5 h-5 flex-shrink-0 rounded shadow-sm"
+        >
+          <rect width="60" height="40" fill="#fff" />
+          <rect x="0" y="0" width="30" height="18" fill="#002D62" />
+            <rect x="30" y="0" width="30" height="18" fill="#CE1126" />
+            <rect x="0" y="22" width="30" height="18" fill="#CE1126" />
+            <rect x="30" y="22" width="30" height="18" fill="#002D62" />
+            <rect x="27" y="0" width="6" height="40" fill="#fff" />
+            <rect x="0" y="17" width="60" height="6" fill="#fff" />
+            <circle cx="30" cy="20" r="5" fill="#002D62" stroke="#CE1126" strokeWidth={1} />
+        </svg>
+      );
+    case 'nicaragua':
+      return (
+        <svg
+          aria-label="Nicaragua flag"
+          role="img"
+          viewBox="0 0 60 40"
+          className="w-5 h-5 flex-shrink-0 rounded shadow-sm"
+        >
+          <rect width="60" height="40" fill="#ffffff" />
+          <rect width="60" height="12" y="0" fill="#0067C6" />
+          <rect width="60" height="12" y="28" fill="#0067C6" />
+          <polygon points="30,15 35,25 25,25" fill="#0067C6" />
+        </svg>
+      );
+    default:
+      return null;
   }
-  return null;
 };
 
 interface CigarCardProps {
@@ -81,33 +125,9 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
         </h3>
         <p className="text-gray-400 mt-1 flex items-center gap-2">
           <span>{cigar.origin}</span>
-          {(() => {
-            const imgSrc = getFlagImage(cigar.origin);
-            if (!imgSrc) {
-              return <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>;
-            }
-            return (
-              <picture>
-                <img
-                  src={imgSrc}
-                  alt=""
-                  loading="lazy"
-                  className="w-5 h-5 object-contain select-none"
-                  onError={(e) => {
-                    const parent = e.currentTarget.parentElement?.parentElement;
-                    if (parent) {
-                      // Remove picture wrapper and replace with emoji span
-                      parent.removeChild(e.currentTarget.parentElement!);
-                      const span = document.createElement('span');
-                      span.textContent = getFlagEmoji(cigar.origin);
-                      span.setAttribute('aria-hidden', 'true');
-                      parent.appendChild(span);
-                    }
-                  }}
-                />
-              </picture>
-            );
-          })()}
+          {renderInlineFlag(cigar.origin) || (
+            <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+          )}
           <span className="sr-only">{`${cigar.origin} flag`}</span>
         </p>
         <p className="text-gray-300 text-sm mt-2 line-clamp-2">
