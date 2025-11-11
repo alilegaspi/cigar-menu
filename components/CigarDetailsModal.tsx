@@ -22,7 +22,7 @@ const renderInlineFlag = (origin: string) => {
     case 'philippines':
     case 'the philippines':
       return (
-        <svg aria-label="Philippines flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+        <svg aria-label="Philippines flag" role="img" viewBox="0 0 60 40" className="inline-block align-middle w-5 h-5 flex-shrink-0 rounded">
           <rect width="60" height="40" fill="#0038A8" />
           <rect y="20" width="60" height="20" fill="#CE1126" />
           <polygon points="0,0 25,20 0,40" fill="#ffffff" />
@@ -40,7 +40,7 @@ const renderInlineFlag = (origin: string) => {
     case 'dominican republic':
     case 'dominican  republic':
       return (
-        <svg aria-label="Dominican Republic flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+        <svg aria-label="Dominican Republic flag" role="img" viewBox="0 0 60 40" className="inline-block align-middle w-5 h-5 flex-shrink-0 rounded">
           <rect width="60" height="40" fill="#fff" />
           <rect x="0" y="0" width="30" height="18" fill="#002D62" />
           <rect x="30" y="0" width="30" height="18" fill="#CE1126" />
@@ -53,7 +53,7 @@ const renderInlineFlag = (origin: string) => {
       );
     case 'nicaragua':
       return (
-        <svg aria-label="Nicaragua flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+        <svg aria-label="Nicaragua flag" role="img" viewBox="0 0 60 40" className="inline-block align-middle w-5 h-5 flex-shrink-0 rounded">
           <rect width="60" height="40" fill="#ffffff" />
           <rect width="60" height="12" y="0" fill="#0067C6" />
           <rect width="60" height="12" y="28" fill="#0067C6" />
@@ -62,7 +62,7 @@ const renderInlineFlag = (origin: string) => {
       );
     case 'honduras':
       return (
-        <svg aria-label="Honduras flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+        <svg aria-label="Honduras flag" role="img" viewBox="0 0 60 40" className="inline-block align-middle w-5 h-5 flex-shrink-0 rounded">
           <rect width="60" height="40" fill="#ffffff" />
           <rect width="60" height="12" y="0" fill="#18a1e0" />
           <rect width="60" height="12" y="28" fill="#18a1e0" />
@@ -149,7 +149,7 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 border-y border-gray-700 py-6">
             <div>
-              <p className="font-semibold text-lg text-white flex items-center gap-3">
+              <p className="font-semibold text-lg text-white flex items-center gap-2">
                 {cigar.origin}
                 {renderInlineFlag(cigar.origin) || (
                   <span aria-hidden="true" className="text-xl">{getFlagEmoji(cigar.origin)}</span>
