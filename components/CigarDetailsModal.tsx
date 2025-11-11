@@ -15,32 +15,83 @@ const DetailItem: React.FC<{ label: string; value: string }> = ({ label, value }
   </div>
 );
 
-// Map common origin names to flag emojis. Fallback to globe if unknown.
-const getFlagEmoji = (origin: string): string => {
+// Inline SVG flags (same approach as CigarCard) with emoji fallback.
+const renderInlineFlag = (origin: string) => {
+  const key = origin.trim().toLowerCase();
+  switch (key) {
+    case 'philippines':
+    case 'the philippines':
+      return (
+        <svg aria-label="Philippines flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+          <rect width="60" height="40" fill="#0038A8" />
+          <rect y="20" width="60" height="20" fill="#CE1126" />
+          <polygon points="0,0 25,20 0,40" fill="#ffffff" />
+          <circle cx="10" cy="20" r="5" fill="#FCD116" />
+          {Array.from({ length: 8 }).map((_, i) => {
+            const angle = (i * 45) * (Math.PI / 180);
+            const x1 = 10 + Math.cos(angle) * 7;
+            const y1 = 20 + Math.sin(angle) * 7;
+            const x2 = 10 + Math.cos(angle) * 10;
+            const y2 = 20 + Math.sin(angle) * 10;
+            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#FCD116" strokeWidth={1} />;
+          })}
+        </svg>
+      );
+    case 'dominican republic':
+    case 'dominican  republic':
+      return (
+        <svg aria-label="Dominican Republic flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+          <rect width="60" height="40" fill="#fff" />
+          <rect x="0" y="0" width="30" height="18" fill="#002D62" />
+          <rect x="30" y="0" width="30" height="18" fill="#CE1126" />
+          <rect x="0" y="22" width="30" height="18" fill="#CE1126" />
+          <rect x="30" y="22" width="30" height="18" fill="#002D62" />
+          <rect x="27" y="0" width="6" height="40" fill="#fff" />
+          <rect x="0" y="17" width="60" height="6" fill="#fff" />
+          <circle cx="30" cy="20" r="5" fill="#002D62" stroke="#CE1126" strokeWidth={1} />
+        </svg>
+      );
+    case 'nicaragua':
+      return (
+        <svg aria-label="Nicaragua flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+          <rect width="60" height="40" fill="#ffffff" />
+          <rect width="60" height="12" y="0" fill="#0067C6" />
+          <rect width="60" height="12" y="28" fill="#0067C6" />
+          <polygon points="30,15 35,25 25,25" fill="#0067C6" />
+        </svg>
+      );
+    case 'honduras':
+      return (
+        <svg aria-label="Honduras flag" role="img" viewBox="0 0 60 40" className="w-6 h-6 flex-shrink-0 rounded shadow-sm">
+          <rect width="60" height="40" fill="#ffffff" />
+          <rect width="60" height="12" y="0" fill="#18a1e0" />
+          <rect width="60" height="12" y="28" fill="#18a1e0" />
+          {(() => {
+            const cx = 30, cy = 20, r = 6;
+            const pts = [
+              [cx - r, cy - 3],
+              [cx, cy - 4],
+              [cx + r, cy - 3],
+              [cx - 2, cy + 1],
+              [cx + 2, cy + 1],
+            ];
+            return pts.map((p, i) => (
+              <circle key={i} cx={p[0]} cy={p[1]} r={1.2} fill="#18a1e0" />
+            ));
+          })()}
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
+const getFlagEmoji = (origin: string) => {
   const key = origin.trim().toLowerCase();
   const map: Record<string, string> = {
-    'cuba': '🇨🇺',
-    'dominican republic': '🇩🇴',
-    'dominican  republic': '🇩🇴',
-    'nicaragua': '🇳🇮',
-    'honduras': '🇭🇳',
-    'philippines': '🇵🇭',
-    'the philippines': '🇵🇭',
-    'indonesia': '🇮🇩',
-    'ecuador': '🇪🇨',
-    'mexico': '🇲🇽',
-    'brazil': '🇧🇷',
-    'spain': '🇪🇸',
-    'italy': '🇮🇹',
-    'switzerland': '🇨🇭',
-    'united states': '🇺🇸',
-    'u.s.a.': '🇺🇸',
-    'usa': '🇺🇸',
+    'philippines': '🇵🇭', 'the philippines': '🇵🇭', 'dominican republic': '🇩🇴', 'nicaragua': '🇳🇮', 'honduras': '🇭🇳'
   };
-  // Try direct match, then contains checks for multi-word strings
-  if (map[key]) return map[key];
-  const found = Object.keys(map).find(k => key.includes(k));
-  return found ? map[found] : '🌍';
+  return map[key] || '🌍';
 };
 
 const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose }) => {
@@ -80,7 +131,7 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
         
         <div className="w-full md:w-1/3 flex-shrink-0 relative aspect-square">
           <img 
-            src={`${import.meta.env.BASE_URL}${cigar.image}`} 
+            src={`${import.meta.env.BASE_URL}${cigar.detailsImage || cigar.image}`} 
             alt={cigar.name} 
             className="w-full h-full object-contain rounded-t-lg md:rounded-l-lg md:rounded-t-none" 
           />
@@ -98,9 +149,11 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 border-y border-gray-700 py-6">
             <div>
-              <p className="font-semibold text-lg text-white flex items-center gap-2">
+              <p className="font-semibold text-lg text-white flex items-center gap-3">
                 {cigar.origin}
-                <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+                {renderInlineFlag(cigar.origin) || (
+                  <span aria-hidden="true" className="text-xl">{getFlagEmoji(cigar.origin)}</span>
+                )}
                 <span className="sr-only">{`${cigar.origin} flag`}</span>
               </p>
             </div>
