@@ -41,7 +41,11 @@ const getFlagImage = (origin: string): string | null => {
     // 'indonesia': 'Indonesia.png',
     // 'ecuador': 'Ecuador.png', etc.
   };
-  if (map[key]) return `${import.meta.env.BASE_URL}images/${map[key]}`;
+  if (map[key]) {
+    const path = `${import.meta.env.BASE_URL}images/${map[key]}`;
+    // Encode spaces and special chars to avoid 404s on some hosts
+    return encodeURI(path);
+  }
   return null;
 };
 
@@ -83,22 +87,25 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
               return <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>;
             }
             return (
-              <img
-                src={imgSrc}
-                alt=""
-                className="w-5 h-5 object-contain"
-                onError={(e) => {
-                  // Hide broken image and insert emoji instead
-                  const parent = e.currentTarget.parentElement;
-                  if (parent) {
-                    e.currentTarget.remove();
-                    const span = document.createElement('span');
-                    span.textContent = getFlagEmoji(cigar.origin);
-                    span.setAttribute('aria-hidden', 'true');
-                    parent.appendChild(span);
-                  }
-                }}
-              />
+              <picture>
+                <img
+                  src={imgSrc}
+                  alt=""
+                  loading="lazy"
+                  className="w-5 h-5 object-contain select-none"
+                  onError={(e) => {
+                    const parent = e.currentTarget.parentElement?.parentElement;
+                    if (parent) {
+                      // Remove picture wrapper and replace with emoji span
+                      parent.removeChild(e.currentTarget.parentElement!);
+                      const span = document.createElement('span');
+                      span.textContent = getFlagEmoji(cigar.origin);
+                      span.setAttribute('aria-hidden', 'true');
+                      parent.appendChild(span);
+                    }
+                  }}
+                />
+              </picture>
             );
           })()}
           <span className="sr-only">{`${cigar.origin} flag`}</span>
