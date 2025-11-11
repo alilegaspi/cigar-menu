@@ -28,6 +28,21 @@ const getFlagEmoji = (origin: string): string => {
   return found ? map[found] : '🌍';
 };
 
+// Prefer small flag images on desktop where some environments render emoji flags as initials.
+// Falls back to emoji if no asset is available.
+const getFlagImage = (origin: string): string | null => {
+  const key = origin.trim().toLowerCase();
+  const map: Record<string, string> = {
+    'philippines': 'Philippines.png',
+    'the philippines': 'Philippines.png',
+    'dominican republic': 'Dominican Republic.png',
+    'dominican  republic': 'Dominican Republic.png',
+    'nicaragua': 'Nicaragua.png',
+  };
+  if (map[key]) return `${import.meta.env.BASE_URL}images/${map[key]}`;
+  return null;
+};
+
 interface CigarCardProps {
   cigar: Cigar;
   onSelect: () => void;
@@ -60,7 +75,15 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
         </h3>
         <p className="text-gray-400 mt-1 flex items-center gap-2">
           <span>{cigar.origin}</span>
-          <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+          {getFlagImage(cigar.origin) ? (
+            <img
+              src={getFlagImage(cigar.origin)!}
+              alt={`${cigar.origin} flag`}
+              className="w-5 h-5 object-contain"
+            />
+          ) : (
+            <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
+          )}
           <span className="sr-only">{`${cigar.origin} flag`}</span>
         </p>
         <p className="text-gray-300 text-sm mt-2 line-clamp-2">
