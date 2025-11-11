@@ -111,7 +111,7 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 animate-fade-in"
+      className="fixed left-0 right-0 bottom-0 top-[5.5rem] bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 animate-fade-in"
       onClick={onClose}
     >
       <div
@@ -150,12 +150,14 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
           
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 border-y border-gray-700 py-6">
             <div>
-              <p className="font-semibold text-lg text-white flex items-center gap-2">
-                {cigar.origin}
-                {renderInlineFlag(cigar.origin) || (
-                  <span aria-hidden="true" className="text-xl">{getFlagEmoji(cigar.origin)}</span>
-                )}
-                <span className="sr-only">{`${cigar.origin} flag`}</span>
+              <p className="font-semibold text-lg text-white">
+                <span className="inline-flex items-center align-middle">
+                  <span>{cigar.origin}</span>{' '}
+                  {renderInlineFlag(cigar.origin) || (
+                    <span aria-hidden="true" className="text-xl align-middle">{getFlagEmoji(cigar.origin)}</span>
+                  )}
+                  <span className="sr-only">{`${cigar.origin} flag`}</span>
+                </span>
               </p>
             </div>
             <DetailItem label="Profile" value={cigar.profile} />
