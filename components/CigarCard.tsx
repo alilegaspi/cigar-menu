@@ -28,8 +28,7 @@ const getFlagEmoji = (origin: string): string => {
   return found ? map[found] : '🌍';
 };
 
-// Prefer small flag images on desktop where some environments render emoji flags as initials.
-// Falls back to emoji if no asset is available.
+// Prefer small flag images; fallback to emoji if image is missing or fails to load.
 const getFlagImage = (origin: string): string | null => {
   const key = origin.trim().toLowerCase();
   const map: Record<string, string> = {
@@ -38,6 +37,9 @@ const getFlagImage = (origin: string): string | null => {
     'dominican republic': 'Dominican Republic.png',
     'dominican  republic': 'Dominican Republic.png',
     'nicaragua': 'Nicaragua.png',
+    // Add more country image filenames here if assets are added:
+    // 'indonesia': 'Indonesia.png',
+    // 'ecuador': 'Ecuador.png', etc.
   };
   if (map[key]) return `${import.meta.env.BASE_URL}images/${map[key]}`;
   return null;
@@ -75,15 +77,30 @@ const CigarCard: React.FC<CigarCardProps> = ({ cigar, onSelect }) => {
         </h3>
         <p className="text-gray-400 mt-1 flex items-center gap-2">
           <span>{cigar.origin}</span>
-          {getFlagImage(cigar.origin) ? (
-            <img
-              src={getFlagImage(cigar.origin)!}
-              alt={`${cigar.origin} flag`}
-              className="w-5 h-5 object-contain"
-            />
-          ) : (
-            <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>
-          )}
+          {(() => {
+            const imgSrc = getFlagImage(cigar.origin);
+            if (!imgSrc) {
+              return <span aria-hidden="true">{getFlagEmoji(cigar.origin)}</span>;
+            }
+            return (
+              <img
+                src={imgSrc}
+                alt=""
+                className="w-5 h-5 object-contain"
+                onError={(e) => {
+                  // Hide broken image and insert emoji instead
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    e.currentTarget.remove();
+                    const span = document.createElement('span');
+                    span.textContent = getFlagEmoji(cigar.origin);
+                    span.setAttribute('aria-hidden', 'true');
+                    parent.appendChild(span);
+                  }
+                }}
+              />
+            );
+          })()}
           <span className="sr-only">{`${cigar.origin} flag`}</span>
         </p>
         <p className="text-gray-300 text-sm mt-2 line-clamp-2">
