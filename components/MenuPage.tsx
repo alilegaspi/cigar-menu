@@ -79,12 +79,12 @@ const MenuPage: React.FC = () => {
         {/* Darken for contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40" aria-hidden="true" />
 
-        <h1
-          className="relative font-serif text-[2rem] md:text-[3rem] font-bold text-center tracking-wide text-[#ff1a1a] drop-shadow-[0_0_10px_rgba(255,26,26,0.35)]"
-          style={{ color: '#ff1a1a' }}
-        >
-          Ruby Wong's Cigars
-        </h1>
+        {/* Centered header image */}
+        <img
+          src={`${import.meta.env.BASE_URL}images/ruby_wong_header.png`}
+          alt="Ruby Wong's Cigars"
+          className="relative h-12 md:h-14 object-contain select-none"
+        />
       </header>
 
       <div className="pt-[5.5rem] px-4 sm:px-8 relative z-10">
