@@ -131,9 +131,10 @@ const CigarDetailsModal: React.FC<CigarDetailsModalProps> = ({ cigar, onClose })
         
         <div className="w-full md:w-1/3 flex-shrink-0 relative aspect-square">
           <img 
-            src={`${import.meta.env.BASE_URL}${cigar.detailsImage || cigar.image}`} 
+            src={`${import.meta.env.BASE_URL}${cigar.image}`} 
             alt={cigar.name} 
             className="w-full h-full object-contain rounded-t-lg md:rounded-l-lg md:rounded-t-none" 
+            onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }}
           />
           <img
             src={`${import.meta.env.BASE_URL}images/RWG.png`}
