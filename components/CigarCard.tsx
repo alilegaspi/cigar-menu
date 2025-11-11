@@ -88,6 +88,32 @@ const renderInlineFlag = (origin: string) => {
           <polygon points="30,15 35,25 25,25" fill="#0067C6" />
         </svg>
       );
+    case 'honduras':
+      return (
+        <svg
+          aria-label="Honduras flag"
+          role="img"
+          viewBox="0 0 60 40"
+          className="w-5 h-5 flex-shrink-0 rounded shadow-sm"
+        >
+          <rect width="60" height="40" fill="#ffffff" />
+          <rect width="60" height="12" y="0" fill="#18a1e0" />
+          <rect width="60" height="12" y="28" fill="#18a1e0" />
+          {(() => {
+            const cx = 30, cy = 20, r = 6;
+            const pts = [
+              [cx - r, cy - 3],
+              [cx, cy - 4],
+              [cx + r, cy - 3],
+              [cx - 2, cy + 1],
+              [cx + 2, cy + 1],
+            ];
+            return pts.map((p, i) => (
+              <circle key={i} cx={p[0]} cy={p[1]} r={1.1} fill="#18a1e0" />
+            ));
+          })()}
+        </svg>
+      );
     default:
       return null;
   }
