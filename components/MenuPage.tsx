@@ -25,6 +25,7 @@ const MenuPage: React.FC = () => {
   const [filterOrigin, setFilterOrigin] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterProfile, setFilterProfile] = useState<string | null>(null);
+  const [headerImgError, setHeaderImgError] = useState(false);
 
   const origins = useMemo(() => {
     const set = new Set(sortedCigars.map(c => c.origin));
@@ -79,12 +80,19 @@ const MenuPage: React.FC = () => {
         {/* Darken for contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/40" aria-hidden="true" />
 
-        {/* Centered header image */}
-        <img
-          src={`${import.meta.env.BASE_URL}images/ruby_wong_header.png`}
-          alt="Ruby Wong's Cigars"
-          className="relative h-12 md:h-14 object-contain select-none"
-        />
+        {/* Centered header image with graceful fallback */}
+        {headerImgError ? (
+          <h1 className="relative text-red-500 text-2xl md:text-3xl font-extrabold tracking-wide drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)] select-none">
+            Ruby Wong's Cigars
+          </h1>
+        ) : (
+          <img
+            src={`${import.meta.env.BASE_URL}images/ruby_wong_header.png`}
+            alt="Ruby Wong's Cigars"
+            className="relative h-12 md:h-14 object-contain select-none"
+            onError={() => setHeaderImgError(true)}
+          />
+        )}
       </header>
 
       <div className="pt-[5.5rem] px-4 sm:px-8 relative z-10">
