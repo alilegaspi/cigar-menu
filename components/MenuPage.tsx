@@ -10,16 +10,37 @@ const MenuPage: React.FC = () => {
   const backgroundImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
   const headerBgImage = import.meta.env.BASE_URL + 'images/cigar-collection-background.jpg';
 
-  // Sort cigars by origin: Philippines first, then other origins alphabetically; within origin, sort by name
-  const sortedCigars = useMemo(() => [...CIGARS_DATA].sort((a, b) => {
-    const pri = (o: string) => (o === 'Philippines' ? 0 : 1);
-    const pa = pri(a.origin);
-    const pb = pri(b.origin);
-    if (pa !== pb) return pa - pb;
-    const oCmp = a.origin.localeCompare(b.origin);
-    if (oCmp !== 0) return oCmp;
-    return a.name.localeCompare(b.name);
-  }), []);
+  // Sort cigars: Philippines first, other origins alphabetically, panetelas ALWAYS last
+  const sortedCigars = useMemo(() => {
+    const panetelas: Cigar[] = [];
+    const regular: Cigar[] = [];
+    
+    // Separate panetelas from regular cigars
+    CIGARS_DATA.forEach(cigar => {
+      if (cigar.name.toUpperCase().includes('PANETELAS')) {
+        panetelas.push(cigar);
+      } else {
+        regular.push(cigar);
+      }
+    });
+    
+    // Sort regular cigars: Philippines first, then by origin, then by name
+    regular.sort((a, b) => {
+      const pri = (o: string) => (o === 'Philippines' ? 0 : 1);
+      const pa = pri(a.origin);
+      const pb = pri(b.origin);
+      if (pa !== pb) return pa - pb;
+      const oCmp = a.origin.localeCompare(b.origin);
+      if (oCmp !== 0) return oCmp;
+      return a.name.localeCompare(b.name);
+    });
+    
+    // Sort panetelas among themselves
+    panetelas.sort((a, b) => a.name.localeCompare(b.name));
+    
+    // Return regular cigars first, then all panetelas at the end
+    return [...regular, ...panetelas];
+  }, []);
 
   const [filterOpen, setFilterOpen] = useState(false);
   const [filterOrigin, setFilterOrigin] = useState<string | null>(null);
@@ -48,7 +69,39 @@ const MenuPage: React.FC = () => {
       const q = searchQuery.toLowerCase();
       base = base.filter(c => c.name.toLowerCase().includes(q));
     }
-    return base;
+    
+    // Re-apply sorting to maintain panetelas-last rule after filtering
+    const sorted = [...base].sort((a, b) => {
+      const isPanetelasA = a.name.toUpperCase().includes('PANETELAS');
+      const isPanetelasB = b.name.toUpperCase().includes('PANETELAS');
+      
+      // If one is panetelas and the other isn't, panetelas goes last
+      if (isPanetelasA && !isPanetelasB) return 1;
+      if (!isPanetelasA && isPanetelasB) return -1;
+      
+      // Both are panetelas or both are not: use normal sorting
+      const pri = (o: string) => (o === 'Philippines' ? 0 : 1);
+      const pa = pri(a.origin);
+      const pb = pri(b.origin);
+      if (pa !== pb) return pa - pb;
+      const oCmp = a.origin.localeCompare(b.origin);
+      if (oCmp !== 0) return oCmp;
+      return a.name.localeCompare(b.name);
+    });
+    
+    // Debug logging
+    const panetelasInList = sorted.filter(c => c.name.toUpperCase().includes('PANETELAS'));
+    const panetelasPositions = panetelasInList.map(c => ({
+      name: c.name,
+      index: sorted.indexOf(c),
+      total: sorted.length
+    }));
+    console.log('🔍 Total cigars:', sorted.length);
+    console.log('🔍 Panetelas found:', panetelasInList.length);
+    console.log('🔍 Panetelas positions:', panetelasPositions);
+    console.log('🔍 Last 8 cigars:', sorted.slice(-8).map(c => c.name));
+    
+    return sorted;
   }, [sortedCigars, filterOrigin, filterProfile, searchQuery]);
 
   return (
@@ -60,7 +113,7 @@ const MenuPage: React.FC = () => {
       />
       <div className="fixed inset-0 bg-black/50 z-0" />
       
-  <header className="fixed top-0 left-0 right-0 z-[60] overflow-hidden flex justify-center items-center bg-black/70 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
+  <header className="fixed top-0 left-0 right-0 z-[60] overflow-hidden flex justify-center items-center bg-black/90 backdrop-blur border-b border-gray-700 px-4 sm:px-8 py-3">
         {/* Header background image */}
         <img
           src={headerBgImage}
@@ -89,7 +142,7 @@ const MenuPage: React.FC = () => {
           <img
             src={`${import.meta.env.BASE_URL}images/ruby_wong_header.png`}
             alt="Ruby Wong's Cigars"
-            className="relative h-12 md:h-14 object-contain select-none"
+            className="relative h-16 md:h-20 object-contain select-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] brightness-110 contrast-110"
             onError={() => setHeaderImgError(true)}
           />
         )}
