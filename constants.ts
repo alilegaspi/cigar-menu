@@ -393,14 +393,14 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 31,
     name: 'FLOR DE FILIPINAS ROBUSTO',
-    image: '/images/FLAVORED PANETELAS VANILLA.jpg',
-    price: '₱300.00',
+    image: '/images/FLOR DE FILIPINAS ROBUSTO.png',
+    price: '₱800.00',
     origin: 'Philippines',
-    profile: 'Mild',
-    vitola: '5x35 Panetela',
-    wrapper: 'N/A',
-    binder: 'N/A',
-    filler: 'N/A',
-    description: 'Aromatic, flavorful, and delightfully smooth, Flor de Filipinas Flavored Cigars are infused with rich tastes that awaken the senses and charm the palate. Offered in delicious varieties like Chocolate, Honey, Cherry, Rum, and the bestselling Vanilla, these cigars are the perfect companion to your favorite after-dinner drink or a relaxed gathering with friends. The 5x35 Vanilla Panetela delivers a light, creamy smoke with a sweet vanilla crème finish. Whether you\'re new to cigars or simply craving a dessert-like indulgence, this petite cigar is a satisfying, aromatic treat.',
+    profile: 'Medium',
+    vitola: '5x52 Robusto',
+    wrapper: 'Philippines',
+    binder: 'Philippines',
+    filler: 'Philippines',
+    description: 'Flor de Filipinas Robusto brings the heritage of Philippine tobacco into a confident, balanced smoke. This robusto delivers a smooth, medium-bodied profile with classic earthy depth, a refined finish, and the unmistakable character of Filipino craftsmanship.',
   }
 ];
