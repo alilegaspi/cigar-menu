@@ -5,7 +5,7 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
-  const imagePath = import.meta.env.BASE_URL + 'images/landing-page.jpg';
+  const imagePath = import.meta.env.BASE_URL + 'images/ruby_wong_header.png';
   
   return (
     <div className="relative flex flex-col items-center justify-center h-screen bg-black overflow-hidden">
