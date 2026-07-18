@@ -56,7 +56,7 @@ export const CIGARS_DATA: Cigar[] = [
     id: 5,
     name: 'FLOR DE FILIPINAS CORONA SUMATRA',
     image: '/images/FLOR DE FILIPINAS CORONA SUMATRA.png',
-    price: '₱1,200.00',
+    price: '₱800.00',
     origin: 'Philippines',
     profile: 'Mild - Medium',
     vitola: '5.5x44 Corona',
