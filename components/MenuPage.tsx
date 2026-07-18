@@ -67,7 +67,10 @@ const MenuPage: React.FC = () => {
     }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      base = base.filter(c => c.name.toLowerCase().includes(q));
+      base = base.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.description.toLowerCase().includes(q)
+      );
     }
     
     // Re-apply sorting to maintain panetelas-last rule after filtering
@@ -105,7 +108,7 @@ const MenuPage: React.FC = () => {
   }, [sortedCigars, filterOrigin, filterProfile, searchQuery]);
 
   return (
-  <div className="relative min-h-screen bg-black">
+  <div className="relative h-full overflow-hidden bg-black">
       <img 
         src={backgroundImage}
         alt="Cigar collection background"
@@ -148,15 +151,17 @@ const MenuPage: React.FC = () => {
         )}
       </header>
 
-      <div className="pt-[5.5rem] px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {visibleCigars.map((cigar) => (
-            <CigarCard
-              key={cigar.id}
-              cigar={cigar}
-              onSelect={() => setSelectedCigar(cigar)}
-            />
-          ))}
+      <div className="absolute inset-0 pt-[5.5rem] px-4 sm:px-8 relative z-10 flex flex-col">
+        <div className="flex-1 overflow-y-auto pb-24 pr-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 2xl:gap-6">
+            {visibleCigars.map((cigar) => (
+              <CigarCard
+                key={cigar.id}
+                cigar={cigar}
+                onSelect={() => setSelectedCigar(cigar)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Floating filter button */}
@@ -223,7 +228,7 @@ const MenuPage: React.FC = () => {
               </div>
             </div>
           )}
-  </div>
+      </div>
       </div>
 
       {selectedCigar && (

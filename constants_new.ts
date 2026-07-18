@@ -172,7 +172,7 @@ export const CIGARS_DATA: Cigar[] = [
   },
   {
     id: 14,
-    name: 'FLAVORED PANETELAS VANILLA',
+    name: 'FLOR DE FILIPINAS ROBUSTO',
     image: '/images/FLAVORED PANETELAS VANILLA.jpg',
     price: '₱300.00',
     origin: 'Philippines',
