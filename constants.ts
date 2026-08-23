@@ -474,7 +474,7 @@ export const CIGARS_DATA: Cigar[] = [
     name: 'COHIBA CONNECTICUT ROBUSTO',
       image: '/images/cohiba-connecticut-robusto.jpg',
     price: '₱3,800.00',
-    origin: 'Honduras',
+    origin: 'Dominican Republic',
     profile: 'Full',
     vitola: '5x54 Robusto',
     wrapper: 'Ecuadorian Corojo',
