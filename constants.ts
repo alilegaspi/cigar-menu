@@ -472,7 +472,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 37,
     name: 'COHIBA CONNECTICUT ROBUSTO',
-    image: '/images/COHIBA CONNECTICUT ROBUSTO.JPG',
+      image: '/images/cohiba-connecticut-robusto.jpg',
     price: '₱3,800.00',
     origin: 'Honduras',
     profile: 'Full',
@@ -485,7 +485,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 38,
     name: 'ZINO PLATINUM SCEPTER GRAND MASTER',
-    image: '/images/ZINO PLATINUM SCEPTER SERIES GRAND MASTER.JPG',
+      image: '/images/zino-platinum-scepter-series-grand-master.jpg',
     price: '₱3,500.00',
     origin: 'Dominican Republic',
     profile: 'Mild - Medium',
@@ -498,7 +498,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 39,
     name: 'LA HISTORIA BY E.P. CARRILLO EL SENADOR',
-    image: '/images/LA HISTORIA BY E.P. CARRILLO EL SENADOR.jpg',
+      image: '/images/la-historia-by-e-p-carrillo-el-senador.jpg',
     price: '₱3,500.00',
     origin: 'Dominican Republic',
     profile: 'Medium - Full',
@@ -511,7 +511,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 40,
     name: 'MONTECRISTO WHITE ESPECIAL NO. 3',
-    image: '/images/MONTECRISTO WHITE ESPECIAL NO.3.JPG',
+      image: '/images/montecristo-white-especial-no-3.jpg',
     price: '₱2,800.00',
     origin: 'Dominican Republic',
     profile: 'Mild - Medium',
@@ -524,7 +524,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 41,
     name: 'ROOM101 BREAKFAST IN PORTUGAL MADURO TORO',
-    image: '/images/ROOM101 BREAKFAST IN PORTUGAL MADURO TORO.jpg',
+      image: '/images/room101-breakfast-in-portugal-maduro-toro.jpg',
     price: '₱2,000.00',
     origin: 'Dominican Republic',
     profile: 'Medium - Medium-Full',
@@ -537,7 +537,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 42,
     name: 'LA AROMA DE CUBA MI AMOR DUQUE',
-    image: '/images/LA AROMA DE CUBA MI AMOR DUQUE.jpg',
+      image: '/images/la-aroma-de-cuba-mi-amor-duque.jpg',
     price: '₱2,500.00',
     origin: 'Nicaragua',
     profile: 'Medium - Full',
@@ -550,7 +550,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 43,
     name: 'PUNCH SIGNATURE SIGNATURE ROBUSTO',
-    image: '/images/PUNCH SIGNATURE ROBUSTO.JPG',
+      image: '/images/punch-signature-robusto.jpg',
     price: '₱2,300.00',
     origin: 'Dominican Republic',
     profile: 'Medium',
