@@ -472,7 +472,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 37,
     name: 'COHIBA CONNECTICUT ROBUSTO',
-    image: '/images/COHIBA CONNECTICUT ROBUSTO.jpg',
+    image: '/images/COHIBA CONNECTICUT ROBUSTO.JPG',
     price: '₱3,800.00',
     origin: 'Honduras',
     profile: 'Full',
@@ -485,7 +485,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 38,
     name: 'ZINO PLATINUM SCEPTER GRAND MASTER',
-    image: '/images/ZINO PLATINUM SCEPTER GRAND MASTER.jpg',
+    image: '/images/ZINO PLATINUM SCEPTER SERIES GRAND MASTER.JPG',
     price: '₱3,500.00',
     origin: 'Dominican Republic',
     profile: 'Mild - Medium',
@@ -511,7 +511,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 40,
     name: 'MONTECRISTO WHITE ESPECIAL NO. 3',
-    image: '/images/MONTECRISTO WHITE ESPECIAL NO. 3.jpg',
+    image: '/images/MONTECRISTO WHITE ESPECIAL NO.3.JPG',
     price: '₱2,800.00',
     origin: 'Dominican Republic',
     profile: 'Mild - Medium',
@@ -550,7 +550,7 @@ export const CIGARS_DATA: Cigar[] = [
   {
     id: 43,
     name: 'PUNCH SIGNATURE SIGNATURE ROBUSTO',
-    image: '/images/PUNCH SIGNATURE SIGNATURE ROBUSTO.jpg',
+    image: '/images/PUNCH SIGNATURE ROBUSTO.JPG',
     price: '₱2,300.00',
     origin: 'Dominican Republic',
     profile: 'Medium',
